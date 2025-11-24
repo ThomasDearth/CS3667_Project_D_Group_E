@@ -1,4 +1,4 @@
 package Ingredients;
-public class Toppings {
+public abstract class Toppings {
     
 }
