@@ -1,4 +1,5 @@
 package Ingredients;
+
 public abstract class Dough {
-    
+    String name;
 }
