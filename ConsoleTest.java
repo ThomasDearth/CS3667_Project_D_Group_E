@@ -5,6 +5,7 @@ public class ConsoleTest {
   public static void main(String[] args) {
     Pizza p = new BBQMeatPizza();
 
-    System.out.println(p.getClass());
+    System.out.println(p.getName());
+    System.out.println(p.getIngredientNames());
   }
 }
