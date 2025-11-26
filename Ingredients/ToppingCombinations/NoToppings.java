@@ -1,4 +1,4 @@
-package Ingredients;
+package Ingredients.ToppingCombinations;
 
 public class NoToppings extends Toppings {
     public NoToppings() {

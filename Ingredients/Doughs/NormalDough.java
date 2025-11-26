@@ -1,4 +1,4 @@
-package Ingredients;
+package Ingredients.Doughs;
 
 public class NormalDough extends Dough{
     public NormalDough() {

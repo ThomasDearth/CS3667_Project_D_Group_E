@@ -1,4 +1,4 @@
-package Ingredients;
+package Ingredients.Doughs;
 
 public abstract class Dough {
     private String name;

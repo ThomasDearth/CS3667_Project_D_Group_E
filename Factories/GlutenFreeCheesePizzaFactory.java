@@ -1,13 +1,13 @@
 package Factories;
 
-import Ingredients.Cheese;
-import Ingredients.Dough;
-import Ingredients.GlutenFreeDough;
-import Ingredients.GooeyCheese;
-import Ingredients.NoToppings;
-import Ingredients.NormalSauce;
-import Ingredients.Sauce;
-import Ingredients.Toppings;
+import Ingredients.Cheeses.Cheese;
+import Ingredients.Cheeses.GooeyCheese;
+import Ingredients.Doughs.Dough;
+import Ingredients.Doughs.GlutenFreeDough;
+import Ingredients.Sauces.NormalSauce;
+import Ingredients.Sauces.Sauce;
+import Ingredients.ToppingCombinations.NoToppings;
+import Ingredients.ToppingCombinations.Toppings;
 import Pizza.Pizza;
 
 public class GlutenFreeCheesePizzaFactory implements IngredientFactory {

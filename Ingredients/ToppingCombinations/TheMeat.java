@@ -1,4 +1,4 @@
-package Ingredients;
+package Ingredients.ToppingCombinations;
 
 public class TheMeat extends Toppings{
     public TheMeat() {

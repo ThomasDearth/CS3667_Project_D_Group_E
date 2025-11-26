@@ -1,4 +1,4 @@
-package Ingredients;
+package Ingredients.ToppingCombinations;
 
 public abstract class Toppings {
     String name;

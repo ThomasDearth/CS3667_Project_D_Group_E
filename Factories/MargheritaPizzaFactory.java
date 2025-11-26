@@ -1,13 +1,13 @@
 package Factories;
 
-import Ingredients.Cheese;
-import Ingredients.Dough;
-import Ingredients.GooeyCheese;
-import Ingredients.NormalDough;
-import Ingredients.OliveOil;
-import Ingredients.Sauce;
-import Ingredients.TomatoAndBasil;
-import Ingredients.Toppings;
+import Ingredients.Cheeses.Cheese;
+import Ingredients.Cheeses.GooeyCheese;
+import Ingredients.Doughs.Dough;
+import Ingredients.Doughs.NormalDough;
+import Ingredients.Sauces.OliveOil;
+import Ingredients.Sauces.Sauce;
+import Ingredients.Sauces.TomatoAndBasil;
+import Ingredients.ToppingCombinations.Toppings;
 import Pizza.Pizza;
 
 public class MargheritaPizzaFactory implements IngredientFactory {

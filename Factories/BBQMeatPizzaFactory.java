@@ -1,13 +1,13 @@
 package Factories;
 
-import Ingredients.BBQSauce;
-import Ingredients.Cheese;
-import Ingredients.Dough;
-import Ingredients.GooeyCheese;
-import Ingredients.NormalDough;
-import Ingredients.Sauce;
-import Ingredients.TheMeat;
-import Ingredients.Toppings;
+import Ingredients.Cheeses.Cheese;
+import Ingredients.Cheeses.GooeyCheese;
+import Ingredients.Doughs.Dough;
+import Ingredients.Doughs.NormalDough;
+import Ingredients.Sauces.BBQSauce;
+import Ingredients.Sauces.Sauce;
+import Ingredients.ToppingCombinations.TheMeat;
+import Ingredients.ToppingCombinations.Toppings;
 import Pizza.BBQMeatPizza;
 import Pizza.Pizza;
 

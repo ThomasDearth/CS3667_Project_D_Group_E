@@ -1,4 +1,4 @@
-package Ingredients;
+package Ingredients.Doughs;
 
 public class GlutenFreeDough extends Dough {
     public GlutenFreeDough() {

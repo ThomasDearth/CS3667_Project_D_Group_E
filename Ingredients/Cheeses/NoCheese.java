@@ -1,4 +1,4 @@
-package Ingredients;
+package Ingredients.Cheeses;
 
 public class NoCheese extends Cheese {
     public NoCheese() {

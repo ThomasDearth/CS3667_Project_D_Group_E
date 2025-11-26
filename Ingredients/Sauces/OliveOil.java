@@ -1,4 +1,4 @@
-package Ingredients;
+package Ingredients.Sauces;
 
 public class OliveOil extends Sauce {
     public OliveOil() {

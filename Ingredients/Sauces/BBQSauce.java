@@ -1,4 +1,4 @@
-package Ingredients;
+package Ingredients.Sauces;
 
 public class BBQSauce extends Sauce {
     public BBQSauce() {

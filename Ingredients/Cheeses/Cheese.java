@@ -1,9 +1,9 @@
-package Ingredients;
+package Ingredients.Cheeses;
 
-public abstract class Sauce {
+public abstract class Cheese {
     private String name;
 
-    public Sauce(String name) {
+    public Cheese(String name) {
       this.name = name;
     }
 

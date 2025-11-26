@@ -1,9 +1,9 @@
 package Factories;
 
-import Ingredients.Cheese;
-import Ingredients.Dough;
-import Ingredients.Sauce;
-import Ingredients.Toppings;
+import Ingredients.Cheeses.Cheese;
+import Ingredients.Doughs.Dough;
+import Ingredients.Sauces.Sauce;
+import Ingredients.ToppingCombinations.Toppings;
 import Pizza.Pizza;
 
 public interface IngredientFactory {

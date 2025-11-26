@@ -1,13 +1,13 @@
 package Factories;
 
-import Ingredients.Cheese;
-import Ingredients.Dough;
-import Ingredients.NoCheese;
-import Ingredients.NoSauce;
-import Ingredients.NoToppings;
-import Ingredients.NormalDough;
-import Ingredients.Sauce;
-import Ingredients.Toppings;
+import Ingredients.Cheeses.Cheese;
+import Ingredients.Cheeses.NoCheese;
+import Ingredients.Doughs.Dough;
+import Ingredients.Doughs.NormalDough;
+import Ingredients.Sauces.NoSauce;
+import Ingredients.Sauces.Sauce;
+import Ingredients.ToppingCombinations.NoToppings;
+import Ingredients.ToppingCombinations.Toppings;
 import Pizza.BoringPizza;
 import Pizza.Pizza;
 
