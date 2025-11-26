@@ -1,5 +1,13 @@
 package Ingredients;
 
 public abstract class Cheese {
-    String name;
+    private String name;
+
+    public Cheese(String name) {
+      this.name = name;
+    }
+
+    public String getName() {
+      return name;
+    }
 }
