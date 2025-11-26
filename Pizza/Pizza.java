@@ -25,5 +25,4 @@ public abstract class Pizza {
         cheese = ingredientFactory.createCheese();
         toppings = ingredientFactory.createToppings();
     }
-
 }

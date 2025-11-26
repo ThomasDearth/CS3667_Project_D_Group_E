@@ -8,6 +8,7 @@ import Ingredients.OliveOil;
 import Ingredients.Sauce;
 import Ingredients.TomatoAndBasil;
 import Ingredients.Toppings;
+import Pizza.Pizza;
 
 public class MargheritaPizzaFactory implements IngredientFactory {
     public Dough createDough() {
@@ -24,5 +25,11 @@ public class MargheritaPizzaFactory implements IngredientFactory {
 
     public Toppings createToppings() {
         return new TomatoAndBasil();
+    }
+    
+    @Override
+    public Pizza createPizza() {
+      // TODO Auto-generated method stub
+      return null;
     }
 }

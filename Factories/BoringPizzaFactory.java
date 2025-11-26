@@ -8,8 +8,10 @@ import Ingredients.NoToppings;
 import Ingredients.NormalDough;
 import Ingredients.Sauce;
 import Ingredients.Toppings;
+import Pizza.BoringPizza;
+import Pizza.Pizza;
 
-public class BoringPizzaFactory {
+public class BoringPizzaFactory implements IngredientFactory {
     public Dough createDough() {
         return new NormalDough();
     }
@@ -24,5 +26,10 @@ public class BoringPizzaFactory {
 
     public Toppings createToppings() {
         return new NoToppings();
+    }
+
+    @Override
+    public Pizza createPizza() {
+      return new BoringPizza();
     }
 }

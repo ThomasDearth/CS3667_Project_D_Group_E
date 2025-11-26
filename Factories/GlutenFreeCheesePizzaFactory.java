@@ -8,8 +8,9 @@ import Ingredients.NoToppings;
 import Ingredients.NormalSauce;
 import Ingredients.Sauce;
 import Ingredients.Toppings;
+import Pizza.Pizza;
 
-public class GlutenFreeCheesePizza implements IngredientFactory {
+public class GlutenFreeCheesePizzaFactory implements IngredientFactory {
     public Dough createDough() {
         return new GlutenFreeDough();
     }
@@ -24,5 +25,11 @@ public class GlutenFreeCheesePizza implements IngredientFactory {
 
     public Toppings createToppings() {
         return new NoToppings();
+    }
+
+    @Override
+    public Pizza createPizza() {
+      // TPDO: auto-generated method stub
+      return null;
     }
 }

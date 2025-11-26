@@ -8,6 +8,8 @@ import Ingredients.NormalDough;
 import Ingredients.Sauce;
 import Ingredients.TheMeat;
 import Ingredients.Toppings;
+import Pizza.BBQMeatPizza;
+import Pizza.Pizza;
 
 public class BBQMeatPizzaFactory implements IngredientFactory {
     public Dough createDough() {
@@ -24,5 +26,10 @@ public class BBQMeatPizzaFactory implements IngredientFactory {
 
     public Toppings createToppings() {
         return new TheMeat();
+    }
+
+    @Override
+    public Pizza createPizza() {
+      return new BBQMeatPizza();
     }
 }
