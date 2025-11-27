@@ -92,6 +92,11 @@ public class PapaJohnsPizzaIngredientFactory implements PizzaIngredientFactory {
         return toppings;
     }
 
+    // this returns a string with all pizzas this factory can make
+    public String getMenu() {
+        return "Gluten Free Cheese Pizza\nMargherita Pizza\nBBQ Meat Pizza\nBoring Pizza";
+    }
+
     @Override
     public Pizza createPizza(String pizzaType) {
         Pizza pizza = null;
