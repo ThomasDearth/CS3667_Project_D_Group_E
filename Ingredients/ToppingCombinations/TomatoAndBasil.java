@@ -1,6 +1,4 @@
-package Ingredients.Sauces;
-
-import Ingredients.ToppingCombinations.Toppings;
+package Ingredients.ToppingCombinations;
 
 public class TomatoAndBasil extends Toppings {
     public TomatoAndBasil() {

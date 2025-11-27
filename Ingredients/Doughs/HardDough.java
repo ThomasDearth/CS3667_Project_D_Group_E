@@ -1,7 +1,7 @@
 package Ingredients.Doughs;
 
-public class NormalDough extends Dough{
-    public NormalDough() {
+public class HardDough extends Dough{
+    public HardDough() {
         super("Normal Dough");
     }
 }
