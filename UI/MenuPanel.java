@@ -1,15 +1,16 @@
 package UI;
 
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
+import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-
 import Factories.PapaJohnsPizzaIngredientFactory;
 import Factories.PizzaHutPizzaIngredientFactory;
 import Factories.PizzaIngredientFactory;
@@ -17,8 +18,10 @@ import Pizza.Pizza;
 
 public class MenuPanel extends JPanel implements ActionListener {
 	private MainPanel parent;
-
 	private PizzaPanel pizzaPanel;
+
+	/** Panel which makes the menu take up more space */
+	private JPanel pizzaPanelSpacer;
 
 	public MenuPanel(MainPanel parent) {
 		this.parent = parent;
@@ -27,10 +30,15 @@ public class MenuPanel extends JPanel implements ActionListener {
 
 		pizzaPanel = new PizzaPanel();
 
+		pizzaPanelSpacer = new JPanel();
+		pizzaPanelSpacer.add(pizzaPanel);
+
 		setIngredientFactory(new PapaJohnsPizzaIngredientFactory());
 		initializeFactorySelector();
 
-		this.add(pizzaPanel);
+		this.add(pizzaPanelSpacer);
+
+		this.setPreferredSize(new Dimension(600, 800));
 	}
 
 	public void setIngredientFactory(PizzaIngredientFactory factory) {
@@ -77,6 +85,7 @@ public class MenuPanel extends JPanel implements ActionListener {
 		public PizzaPanel() {
 			setBorderTitle("Menu");
 			setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+			this.setPreferredSize(new Dimension(600, 700));
 		}
 
 		/** Initializes the drop-downs on the menu. */
@@ -90,6 +99,7 @@ public class MenuPanel extends JPanel implements ActionListener {
 				itemButton.addActionListener(this);
 
 				this.add(itemButton);
+				this.add(Box.createRigidArea(new Dimension(0, 20)));
 			}
 
 			// Reinitialize the panel
