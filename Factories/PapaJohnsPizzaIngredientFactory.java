@@ -93,8 +93,9 @@ public class PapaJohnsPizzaIngredientFactory implements PizzaIngredientFactory {
     }
 
     // this returns a string with all pizzas this factory can make
-    public String getMenu() {
-        return "Gluten Free Cheese Pizza\nMargherita Pizza\nBBQ Meat Pizza\nBoring Pizza";
+    public String[] getMenu() {
+        String[] menu = {"Gluten Free Cheese Pizza", "Margherita Pizza", "BBQ Meat Pizza", "Boring Pizza"};
+        return menu;
     }
 
     @Override
