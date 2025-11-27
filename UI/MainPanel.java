@@ -3,14 +3,14 @@ package UI;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 
-import Factories.IngredientFactory;
+import Factories.PizzaIngredientFactory;
 
 public class MainPanel extends JPanel {
   private JPanel menuSelectPanel;
   private JPanel pizzaCreatePanel;
   private JPanel displayPizzaPanel;
 
-  private IngredientFactory selectedFactory;
+  private PizzaIngredientFactory selectedFactory;
 
   public MainPanel() {
     this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
@@ -24,11 +24,11 @@ public class MainPanel extends JPanel {
     this.add(displayPizzaPanel);
   }
 
-  public void setIngredientFactory(IngredientFactory factory) {
+  public void setIngredientFactory(PizzaIngredientFactory factory) {
     this.selectedFactory = factory;
   }
 
-  public IngredientFactory getIngredientFactory() {
+  public PizzaIngredientFactory getIngredientFactory() {
     return selectedFactory;
   }
 }

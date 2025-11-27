@@ -9,7 +9,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-import Factories.IngredientFactory;
+import Factories.PizzaIngredientFactory;
 
 public class MenuPanel extends JPanel implements ActionListener {
 	private MainPanel parent;
@@ -31,7 +31,7 @@ public class MenuPanel extends JPanel implements ActionListener {
 		this.add(pizzaPanel);
 	}
 
-	public void setIngredientFactory(IngredientFactory factory) {
+	public void setIngredientFactory(PizzaIngredientFactory factory) {
 		parent.setIngredientFactory(factory);
 		// TODO: set menuItems using the selected factory
 	}
