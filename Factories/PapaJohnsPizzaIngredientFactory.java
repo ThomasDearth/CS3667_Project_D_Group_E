@@ -124,4 +124,9 @@ public class PapaJohnsPizzaIngredientFactory implements PizzaIngredientFactory {
         }
         return pizza;
     }
+
+    @Override
+    public String getRestaurantName() {
+        return "Papa John's";
+    }
 }

@@ -44,4 +44,9 @@ public class PizzaHutPizzaIngredientFactory implements PizzaIngredientFactory {
     throw new UnsupportedOperationException("Unimplemented method 'getMenu'");
   }
 
+  @Override
+  public String getRestaurantName() {
+    return "Pizza Hut";
+  }
+
 }

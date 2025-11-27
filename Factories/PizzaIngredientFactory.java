@@ -15,4 +15,5 @@ public interface PizzaIngredientFactory {
     public Pizza createPizza(String pizzaType);
 
     public String[] getMenu();
+    public String getRestaurantName();
 }

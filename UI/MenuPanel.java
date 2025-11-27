@@ -35,6 +35,7 @@ public class MenuPanel extends JPanel implements ActionListener {
 
 	public void setIngredientFactory(PizzaIngredientFactory factory) {
 		parent.setIngredientFactory(factory);
+		pizzaPanel.setBorderTitle(factory.getRestaurantName() + " Menu");
 		pizzaPanel.initializeMenuOptions();
 	}
 
@@ -65,6 +66,7 @@ public class MenuPanel extends JPanel implements ActionListener {
 				break;
 			case "Papa John's":
 				setIngredientFactory(new PapaJohnsPizzaIngredientFactory());
+				break;
 		}
 	}
 
@@ -75,7 +77,6 @@ public class MenuPanel extends JPanel implements ActionListener {
 		public PizzaPanel() {
 			setBorderTitle("Menu");
 			setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-			// this.parent = parent;
 		}
 
 		/** Initializes the drop-downs on the menu. */
