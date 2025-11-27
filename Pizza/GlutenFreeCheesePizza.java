@@ -1,10 +1,13 @@
 package Pizza;
 
-import Factories.GlutenFreeCheesePizzaFactory;
+import Factories.PizzaIngredientFactory;
 
 public class GlutenFreeCheesePizza extends Pizza {
-  public GlutenFreeCheesePizza() {
-    super(new GlutenFreeCheesePizzaFactory());
-    this.name = "Gluten Free Cheese Pizza";
+  public GlutenFreeCheesePizza(PizzaIngredientFactory ingredientFactory) {
+    super(ingredientFactory);
+    dough = ingredientFactory.createDough("Gluten Free Cheese");
+    sauce = ingredientFactory.createSauce("Gluten Free Cheese");
+    cheese = ingredientFactory.createCheese("Gluten Free Cheese");
+    toppings = ingredientFactory.createToppings("Gluten Free Cheese");
   }
 }

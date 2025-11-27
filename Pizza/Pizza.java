@@ -1,13 +1,13 @@
 package Pizza;
 
-import Factories.IngredientFactory;
+import Factories.PizzaIngredientFactory;
 import Ingredients.Cheeses.Cheese;
 import Ingredients.Doughs.Dough;
 import Ingredients.Sauces.Sauce;
 import Ingredients.ToppingCombinations.Toppings;
 
 public abstract class Pizza {
-    IngredientFactory ingredientFactory; // the ingredient factory which will prepare this pizza
+    PizzaIngredientFactory ingredientFactory; // the ingredient factory which will prepare this pizza
     Dough dough;
     Sauce sauce;
     Cheese cheese;
@@ -18,19 +18,14 @@ public abstract class Pizza {
      * 
      * @param ingredientFactory The factory which specifies what ingredients compose the pizza.
      */
-    public Pizza(IngredientFactory ingredientFactory) {
+    public Pizza(PizzaIngredientFactory ingredientFactory) {
         this.ingredientFactory = ingredientFactory;
-        prepare();
-    }
-    
-    /** Initializes the ingredient fields with information from the factory. */
-    private void prepare() { // initializes ingredients
-        dough = ingredientFactory.createDough();
-        sauce = ingredientFactory.createSauce();
-        cheese = ingredientFactory.createCheese();
-        toppings = ingredientFactory.createToppings();
     }
 
+    /** Sets pizza name */
+    public void setName(String name) {
+      this.name = name;
+    }
     /** Returns a human-readable name for the pizza. */
     public String getName() {
       return name;

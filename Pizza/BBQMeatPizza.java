@@ -1,11 +1,13 @@
 package Pizza;
 
-import Factories.BBQMeatPizzaFactory;
+import Factories.PizzaIngredientFactory;
 
 public class BBQMeatPizza extends Pizza {
-  
-  public BBQMeatPizza() {
-    super(new BBQMeatPizzaFactory());
-    this.name = "BBQ Meat Pizza";
+  public BBQMeatPizza(PizzaIngredientFactory ingredientFactory) {
+    super(ingredientFactory);
+    dough = ingredientFactory.createDough("BBQ Meat");
+    sauce = ingredientFactory.createSauce("BBQ Meat");
+    cheese = ingredientFactory.createCheese("BBQ Meat");
+    toppings = ingredientFactory.createToppings("BBQ Meat");
   }
 }
