@@ -6,34 +6,36 @@ import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
+import Factories.PapaJohnsPizzaIngredientFactory;
+import Factories.PizzaHutPizzaIngredientFactory;
 import Factories.PizzaIngredientFactory;
+import Pizza.Pizza;
 
 public class MenuPanel extends JPanel implements ActionListener {
 	private MainPanel parent;
-	
-	private String[] menuItems;
 
-	private JPanel pizzaPanel;
+	private PizzaPanel pizzaPanel;
 
 	public MenuPanel(MainPanel parent) {
 		this.parent = parent;
 
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
-		initializeFactorySelector();
+		pizzaPanel = new PizzaPanel();
 
-		pizzaPanel = new JPanel();
-		pizzaPanel.setBorder(BorderFactory.createTitledBorder("Menu"));
+		setIngredientFactory(new PapaJohnsPizzaIngredientFactory());
+		initializeFactorySelector();
 
 		this.add(pizzaPanel);
 	}
 
 	public void setIngredientFactory(PizzaIngredientFactory factory) {
 		parent.setIngredientFactory(factory);
-		// TODO: set menuItems using the selected factory
+		pizzaPanel.initializeMenuOptions();
 	}
 
 	/** Initializes the factory selection radio buttons. */
@@ -54,15 +56,56 @@ public class MenuPanel extends JPanel implements ActionListener {
 		this.add(papaFactory);
 	}
 
-	/** Initializes the drop-downs on the menu. */
-	private void initializeMenuOptions() {
-		
-	}
-
 	/** Listens for when a new factory is selected. */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO: switch factories appropriately
-		System.out.println(e.getActionCommand());
+		switch (e.getActionCommand()) {
+			case "Pizza Hut":
+				setIngredientFactory(new PizzaHutPizzaIngredientFactory());
+				break;
+			case "Papa John's":
+				setIngredientFactory(new PapaJohnsPizzaIngredientFactory());
+		}
+	}
+
+	/** Anonymous inner class for displaying menu items. */
+	private class PizzaPanel extends JPanel implements ActionListener {
+		// private MainPanel parent;
+
+		public PizzaPanel() {
+			setBorderTitle("Menu");
+			setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+			// this.parent = parent;
+		}
+
+		/** Initializes the drop-downs on the menu. */
+		private void initializeMenuOptions() {
+			String[] menuOptionStrings = parent.getIngredientFactory().getMenu();
+
+			// Rewrite the menu with new dropdowns
+			this.removeAll();
+			for (String item : menuOptionStrings) {
+				JButton itemButton = new JButton(item);
+				itemButton.addActionListener(this);
+
+				this.add(itemButton);
+			}
+
+			// Reinitialize the panel
+			this.revalidate();
+			this.repaint();
+		}
+		
+		public void setBorderTitle(String title) {
+			setBorder(BorderFactory.createTitledBorder(title));
+		}
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			Pizza p = parent.getIngredientFactory().createPizza(e.getActionCommand());
+
+			parent.setSelectedPizza(p);
+		}
+
 	}
 }

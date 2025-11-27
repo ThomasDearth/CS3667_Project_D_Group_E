@@ -13,4 +13,6 @@ public interface PizzaIngredientFactory {
     public Toppings createToppings(String pizzaType);
 
     public Pizza createPizza(String pizzaType);
+
+    public String[] getMenu();
 }
