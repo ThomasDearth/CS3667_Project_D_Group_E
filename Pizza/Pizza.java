@@ -7,43 +7,55 @@ import Ingredients.Sauces.Sauce;
 import Ingredients.ToppingCombinations.Toppings;
 
 public abstract class Pizza {
-    PizzaIngredientFactory ingredientFactory; // the ingredient factory which will prepare this pizza
+    PizzaIngredientFactory ingredientFactory; 
     Dough dough;
     Sauce sauce;
     Cheese cheese;
     Toppings toppings;
     String name;
 
-    /** Creates a new Pizza using the properties from the factory provided.
-     * 
-     * @param ingredientFactory The factory which specifies what ingredients compose the pizza.
-     */
+    // Constructor
     public Pizza(PizzaIngredientFactory ingredientFactory) {
         this.ingredientFactory = ingredientFactory;
     }
 
-    /** Sets pizza name */
+    // Sets pizza name
     public void setName(String name) {
-      this.name = name;
+        this.name = name;
     }
-    /** Returns a human-readable name for the pizza. */
+
+    // Returns pizza name
     public String getName() {
-      return name;
+        return name;
     }
 
-    /** Returns a four-line list of ingredients for the pizza. */
+    // Returns a 4-line description of ingredients
     public String getIngredientNames() {
-      String ingredientList = "";
-      ingredientList = ingredientList.concat("Dough: " + getDoughName());
-      ingredientList = ingredientList.concat("\nSauce: " + getSauceName());
-      ingredientList = ingredientList.concat("\nCheese: " + getCheeseName());
-      ingredientList = ingredientList.concat("\nToppings: " + getToppingNames());
-
-      return ingredientList;
+        String ingredientList = "";
+        ingredientList = ingredientList.concat("Dough: " + getDoughName());
+        ingredientList = ingredientList.concat("\nSauce: " + getSauceName());
+        ingredientList = ingredientList.concat("\nCheese: " + getCheeseName());
+        ingredientList = ingredientList.concat("\nToppings: " + getToppingNames());
+        return ingredientList;
     }
 
     public String getDoughName() { return dough.getName(); }
     public String getSauceName() { return sauce.getName(); }
     public String getCheeseName() { return cheese.getName(); }
     public String getToppingNames() { return toppings.getName(); }
+
+    // UI-friendly output: each ingredient printed line-by-line.
+    public String getIngredients() {
+        StringBuilder sb = new StringBuilder();
+        for (String ingredient : getIngredientNames().split("\n")) {
+            sb.append(ingredient).append("\n");
+        }
+        return sb.toString();
+    }
+
+    // Optional: nice display when printing objects
+    @Override
+    public String toString() {
+        return getName() + "\n" + getIngredients();
+    }
 }
