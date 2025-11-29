@@ -1,52 +1,132 @@
 package Factories;
 
 import Ingredients.Cheeses.Cheese;
+import Ingredients.Cheeses.GooeyCheese;
+import Ingredients.Cheeses.NoCheese;
 import Ingredients.Doughs.Dough;
+import Ingredients.Doughs.GlutenFreeDough;
+import Ingredients.Doughs.HardDough;
+import Ingredients.Sauces.BBQSauce;
+import Ingredients.Sauces.NoSauce;
+import Ingredients.Sauces.NormalSauce;
+import Ingredients.Sauces.OliveOil;
 import Ingredients.Sauces.Sauce;
+import Ingredients.ToppingCombinations.NoToppings;
+import Ingredients.ToppingCombinations.TheMeat;
+import Ingredients.ToppingCombinations.TomatoAndBasil;
 import Ingredients.ToppingCombinations.Toppings;
+import Pizza.BBQMeatPizza;
+import Pizza.BoringPizza;
+import Pizza.GlutenFreeCheesePizza;
+import Pizza.MargheritaPizza;
 import Pizza.Pizza;
 
 public class PizzaHutPizzaIngredientFactory implements PizzaIngredientFactory {
+    public Dough createDough(String pizzaType) {
+        Dough dough = null;
+        if (pizzaType == "Gluten Free Cheese") dough = new GlutenFreeDough();
+        else dough = new HardDough();
+        return dough;
+    }
 
-  @Override
-  public Dough createDough(String pizzaType) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'createDough'");
-  }
+    public Sauce createSauce(String pizzaType) {
+        Sauce sauce = null;
+        switch(pizzaType) {
+            case "Gluten Free Cheese":
+                sauce = new NormalSauce();
+                break;
+            case "Margherita":
+                sauce = new OliveOil();
+                break;
+            case "BBQ Meat":
+                sauce = new BBQSauce();
+                break;
+            case "Boring":
+                sauce = new NoSauce();
+                break;
+            default:
+                /* TODO: Handle cases where type matches none given. */
+        }
+        return sauce;
+    }
 
-  @Override
-  public Sauce createSauce(String pizzaType) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'createSauce'");
-  }
+    public Cheese createCheese(String pizzaType) {
+        Cheese cheese = null;
+        switch(pizzaType) {
+            case "Gluten Free Cheese":
+                cheese = new GooeyCheese();
+                break;
+            case "Margherita":
+                cheese = new GooeyCheese();
+                break;
+            case "BBQ Meat":
+                cheese = new GooeyCheese();
+                break;
+            case "Boring":
+                cheese = new NoCheese();
+                break;
+            default:
+                /* TODO: Handle cases where type matches none given. */
+        }
+        return cheese;
+    }
 
-  @Override
-  public Cheese createCheese(String pizzaType) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'createCheese'");
-  }
+    public Toppings createToppings(String pizzaType) {
+        Toppings toppings = null;
+        switch(pizzaType) {
+            case "Gluten Free Cheese":
+                toppings = new NoToppings();
+                break;
+            case "Margherita":
+                toppings = new TomatoAndBasil();
+                break;
+            case "BBQ Meat":
+                toppings = new TheMeat();
+                break;
+            case "Boring":
+                toppings = new NoToppings();
+                break;
+            default:
+                /* TODO: Handle cases where type matches none given. */
+        }
+        return toppings;
+    }
 
-  @Override
-  public Toppings createToppings(String pizzaType) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'createToppings'");
-  }
+    // this returns a string with all pizzas this factory can make
+    public String[] getMenu() {
+        String[] menu = {"Gluten Free Cheese", "Margherita", "BBQ Meat", "Boring"};
+        return menu;
+    }
 
-  @Override
-  public Pizza createPizza(String pizzaType) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'createPizza'");
-  }
+    @Override
+    public Pizza createPizza(String pizzaType) {
+        Pizza pizza = null;
 
-  @Override
-  public String[] getMenu() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'getMenu'");
-  }
+        switch (pizzaType) {
+            case "Gluten Free Cheese":
+                pizza = new GlutenFreeCheesePizza(this);
+                pizza.setName("Pizza Hut Gluten Free Cheese Pizza");
+                break;
+            case "Margherita":
+                pizza = new MargheritaPizza(this);
+                pizza.setName("Pizza Hut Margherita Pizza");
+                break;
+            case "BBQ Meat":
+                pizza = new BBQMeatPizza(this);
+                pizza.setName("Pizza Hut BBQ Meat Pizza");
+                break;
+            case "Boring":
+                pizza = new BoringPizza(this);
+                pizza.setName("Pizza Hut Boring Pizza");
+                break;
+            default:
+                /* TODO: Handle cases where type matches none given. */
+        }
+        return pizza;
+    }
 
-  @Override
-  public String getRestaurantName() {
-    return "Pizza Hut";
-  }
-
+    @Override
+    public String getRestaurantName() {
+        return "Pizza Hut";
+    }
 }
