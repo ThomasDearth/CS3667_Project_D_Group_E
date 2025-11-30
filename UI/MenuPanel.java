@@ -33,7 +33,7 @@ public class MenuPanel extends JPanel implements ActionListener {
 		pizzaPanelSpacer = new JPanel();
 		pizzaPanelSpacer.add(pizzaPanel);
 
-		setIngredientFactory(new PapaJohnsPizzaIngredientFactory());
+		setIngredientFactory(new PizzaHutPizzaIngredientFactory());
 		initializeFactorySelector();
 
 		this.add(pizzaPanelSpacer);
